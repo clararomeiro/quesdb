@@ -1,0 +1,12 @@
+C:\Users\aldenirtelles_frwk\Desktop\BackRepo\QuesDB\QuesDB.Test\bin\Debug\net6.0\QuesDB.Test.deps.json
+C:\Users\aldenirtelles_frwk\Desktop\BackRepo\QuesDB\QuesDB.Test\bin\Debug\net6.0\QuesDB.Test.dll
+C:\Users\aldenirtelles_frwk\Desktop\BackRepo\QuesDB\QuesDB.Test\bin\Debug\net6.0\QuesDB.Test.pdb
+C:\Users\aldenirtelles_frwk\Desktop\BackRepo\QuesDB\QuesDB.Test\obj\Debug\net6.0\QuesDB.Test.csproj.AssemblyReference.cache
+C:\Users\aldenirtelles_frwk\Desktop\BackRepo\QuesDB\QuesDB.Test\obj\Debug\net6.0\QuesDB.Test.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\aldenirtelles_frwk\Desktop\BackRepo\QuesDB\QuesDB.Test\obj\Debug\net6.0\QuesDB.Test.AssemblyInfoInputs.cache
+C:\Users\aldenirtelles_frwk\Desktop\BackRepo\QuesDB\QuesDB.Test\obj\Debug\net6.0\QuesDB.Test.AssemblyInfo.cs
+C:\Users\aldenirtelles_frwk\Desktop\BackRepo\QuesDB\QuesDB.Test\obj\Debug\net6.0\QuesDB.Test.csproj.CoreCompileInputs.cache
+C:\Users\aldenirtelles_frwk\Desktop\BackRepo\QuesDB\QuesDB.Test\obj\Debug\net6.0\QuesDB.Test.dll
+C:\Users\aldenirtelles_frwk\Desktop\BackRepo\QuesDB\QuesDB.Test\obj\Debug\net6.0\refint\QuesDB.Test.dll
+C:\Users\aldenirtelles_frwk\Desktop\BackRepo\QuesDB\QuesDB.Test\obj\Debug\net6.0\QuesDB.Test.pdb
+C:\Users\aldenirtelles_frwk\Desktop\BackRepo\QuesDB\QuesDB.Test\obj\Debug\net6.0\ref\QuesDB.Test.dll

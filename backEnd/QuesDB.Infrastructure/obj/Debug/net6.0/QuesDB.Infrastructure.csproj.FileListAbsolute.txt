@@ -1,0 +1,17 @@
+C:\Users\aldenirtelles_frwk\Desktop\BackRepo\QuesDB\QuesDB.Infrastructure\bin\Debug\net6.0\QuesDB.Infrastructure.deps.json
+C:\Users\aldenirtelles_frwk\Desktop\BackRepo\QuesDB\QuesDB.Infrastructure\bin\Debug\net6.0\QuesDB.Infrastructure.runtimeconfig.json
+C:\Users\aldenirtelles_frwk\Desktop\BackRepo\QuesDB\QuesDB.Infrastructure\bin\Debug\net6.0\QuesDB.Infrastructure.dll
+C:\Users\aldenirtelles_frwk\Desktop\BackRepo\QuesDB\QuesDB.Infrastructure\bin\Debug\net6.0\QuesDB.Infrastructure.pdb
+C:\Users\aldenirtelles_frwk\Desktop\BackRepo\QuesDB\QuesDB.Infrastructure\bin\Debug\net6.0\QuesDB.Domain.dll
+C:\Users\aldenirtelles_frwk\Desktop\BackRepo\QuesDB\QuesDB.Infrastructure\bin\Debug\net6.0\QuesDB.Domain.pdb
+C:\Users\aldenirtelles_frwk\Desktop\BackRepo\QuesDB\QuesDB.Infrastructure\obj\Debug\net6.0\QuesDB.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\aldenirtelles_frwk\Desktop\BackRepo\QuesDB\QuesDB.Infrastructure\obj\Debug\net6.0\QuesDB.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\aldenirtelles_frwk\Desktop\BackRepo\QuesDB\QuesDB.Infrastructure\obj\Debug\net6.0\QuesDB.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\aldenirtelles_frwk\Desktop\BackRepo\QuesDB\QuesDB.Infrastructure\obj\Debug\net6.0\QuesDB.Infrastructure.AssemblyInfo.cs
+C:\Users\aldenirtelles_frwk\Desktop\BackRepo\QuesDB\QuesDB.Infrastructure\obj\Debug\net6.0\QuesDB.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\aldenirtelles_frwk\Desktop\BackRepo\QuesDB\QuesDB.Infrastructure\obj\Debug\net6.0\QuesDB.Infrastructure.csproj.CopyComplete
+C:\Users\aldenirtelles_frwk\Desktop\BackRepo\QuesDB\QuesDB.Infrastructure\obj\Debug\net6.0\QuesDB.Infrastructure.dll
+C:\Users\aldenirtelles_frwk\Desktop\BackRepo\QuesDB\QuesDB.Infrastructure\obj\Debug\net6.0\refint\QuesDB.Infrastructure.dll
+C:\Users\aldenirtelles_frwk\Desktop\BackRepo\QuesDB\QuesDB.Infrastructure\obj\Debug\net6.0\QuesDB.Infrastructure.pdb
+C:\Users\aldenirtelles_frwk\Desktop\BackRepo\QuesDB\QuesDB.Infrastructure\obj\Debug\net6.0\QuesDB.Infrastructure.genruntimeconfig.cache
+C:\Users\aldenirtelles_frwk\Desktop\BackRepo\QuesDB\QuesDB.Infrastructure\obj\Debug\net6.0\ref\QuesDB.Infrastructure.dll
