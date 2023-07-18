@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 using QuesDB.Domain.Contracts.Requests;
 using QuesDB.Domain.Entities;
 using QuesDB.Domain.Interfaces;
+using OpenAI_API.Chat;
+using OpenAI_API;
 
 namespace QuesDB.Controllers
 {
@@ -22,19 +24,38 @@ namespace QuesDB.Controllers
         [HttpPost("/criarFormulario")]
         public async Task<IActionResult> AdicionarFormulario (FormularioRequest formulario)
         {
-            if(formulario == null)
+            string APIKey = "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";
+            string answer = string.Empty;
+
+            if (formulario == null)
             {
                 return BadRequest();
             }
             var formularioMap = mapper.Map<Formulario>(formulario);
-            var criarFormulario = await repositorioFormulario.CreateAsync(formularioMap);
+            //var criarFormulario = await repositorioFormulario.CreateAsync(formularioMap);
 
-            if(criarFormulario == null)
+            /*if(criarFormulario == null)
             {
                 return BadRequest();
+            }*/
+
+            var openai = new OpenAIAPI(APIKey);
+            ChatRequest completion = new ChatRequest();
+            ChatMessageRole role = ChatMessageRole.User;
+            completion.Messages = new ChatMessage[] { new ChatMessage(role, Utils.parseFormulario(formulario)) };
+            completion.Model = OpenAI_API.Models.Model.ChatGPTTurbo;
+            completion.MaxTokens = 1000;
+
+            var result = await openai.Chat.CreateChatCompletionAsync(completion);
+
+            foreach (var item in result.Choices)
+            {
+                answer = item.Message.Content;
             }
 
-            return Ok(formulario);
+
+            return Ok(answer);
         }
+
     }
 }
