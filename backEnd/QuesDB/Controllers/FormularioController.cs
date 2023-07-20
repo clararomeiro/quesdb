@@ -24,7 +24,7 @@ namespace QuesDB.Controllers
         [HttpPost("/criarFormulario")]
         public async Task<IActionResult> AdicionarFormulario (FormularioRequest formulario)
         {
-            string APIKey = "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";
+            string APIKey = Utils.getAPIKey();
             string answer = string.Empty;
 
             if (formulario == null)
