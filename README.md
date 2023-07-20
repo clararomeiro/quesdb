@@ -14,6 +14,7 @@
 - Install Visual Studio for .Net development;
 - Install SQL Server Express + SQL Server Management Studio;
 - Clone project and open the .sln file on Visual Studio;
+- You'll need to create this file: "quesdb\backEnd\QuesDB\config\APIKEY.txt" containig just the openAi Key.
 - Connect SQL Server on Visual Studio;
 - Run project and access swagger through this url: https://localhost:7259/swagger/index.html/.
 
