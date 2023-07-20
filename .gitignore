@@ -112,4 +112,16 @@ backEnd/QuesDB/obj/project.assets.json
 backEnd/QuesDB/obj/project.nuget.cache
 backEnd/QuesDB/obj/QuesDB.csproj.nuget.dgspec.json
 backEnd/QuesDB/obj/QuesDB.csproj.nuget.g.props
-backEnd/QuesDB/QuesDB.csproj
+*.2
+*.v2
+*.vsidx
+backEnd/.vs/QuesDB/v17/.suo
+*.cache
+*.editorconfig
+backEnd/QuesDB.Domain/obj/project.assets.json
+backEnd/QuesDB.Domain/obj/QuesDB.Domain.csproj.nuget.dgspec.json
+*.props
+backEnd/QuesDB/obj/QuesDB.csproj.nuget.dgspec.json
+backEnd/QuesDB/obj/project.assets.json
+backEnd/QuesDB.Test/obj/QuesDB.Test.csproj.nuget.dgspec.json
+backEnd/QuesDB.Test/obj/project.assets.json
