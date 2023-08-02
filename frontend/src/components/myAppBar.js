@@ -17,16 +17,16 @@ import Button from '@mui/material/Button';
 import { useRouter } from 'next/router';
 
 const drawerWidth = 240;
-const navItems = [
-  {name: 'Início', path: '/'}, 
-  {name: 'Sobre', path: '/sobre'},
-  {name: 'Login', path: '/'}
+const navItems2 = [
+  {name: 'Home', route: '/'},
+  {name: 'Sobre', route: '/sobre'},
+  {name: 'Teste', route: '/teste'},
 ];
 
 function MyAppBar(props) {
-  const { window } = props;
-  const [mobileOpen, setMobileOpen] = React.useState(false);
+  const { window, children } = props;
   const router = useRouter();
+  const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
@@ -34,15 +34,15 @@ function MyAppBar(props) {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-      <Typography variant="h6" sx={{ my: 5 }}>
+      <Typography variant="h6" sx={{ my: 2 }}>
         QuesDB
       </Typography>
       <Divider />
       <List>
-        {Object.keys(navItems).map((index) => (
-          <ListItem key={index} disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary={navItems[index].name} />
+        {navItems2.map((item) => (
+          <ListItem key={item.name} disablePadding>
+            <ListItemButton sx={{ textAlign: 'center' }} onClick={() => router.push(item.route)}>
+              <ListItemText primary={item.name} />
             </ListItemButton>
           </ListItem>
         ))}
@@ -53,7 +53,8 @@ function MyAppBar(props) {
   const container = window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box>
+    <Box sx={{ display: 'flex' }}>
+      <CssBaseline />
       <AppBar component="nav">
         <Toolbar>
           <IconButton
@@ -66,18 +67,17 @@ function MyAppBar(props) {
             <MenuIcon />
           </IconButton>
           <Typography
-            variant="h3"
+            variant="h6"
             component="div"
-            color="secondary"
-            style={{padding: 20}}
+            color={'secondary'}
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
           >
             QuesDB
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-            {Object.keys(navItems).map((index) => (
-              <Button key={1} sx={{ color: '#fff' }} style={{fontSize: 15}} onClick={() => router.push(navItems[index].path)}>
-                <Typography>{navItems[index].name}</Typography>
+            {navItems2.map((item) => (
+              <Button key={item.name} sx={{ color: '#fff' }} onClick={() => router.push(item.route)}>
+                {item.name}
               </Button>
             ))}
           </Box>
@@ -100,7 +100,10 @@ function MyAppBar(props) {
           {drawer}
         </Drawer>
       </Box>
-      
+      <Box component="main" style={{width: '100%'}}>
+        <Toolbar />
+        {children}
+      </Box>
     </Box>
   );
 }
