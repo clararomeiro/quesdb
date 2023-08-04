@@ -5,7 +5,9 @@ import MyAppBar from "@/components/myAppBar";
 export default function PublicPage({ children }) {
   return (
     <Box>
-      <MyAppBar children={children}/>
+      <MyAppBar>
+        {children}
+      </MyAppBar>
     </Box>
   );
 }
