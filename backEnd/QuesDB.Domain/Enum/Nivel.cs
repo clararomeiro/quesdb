@@ -3,7 +3,7 @@
     public enum Nivel
     {
         Basico = 0,
-        FundamentalI = 1,
-        EM = 2
+        Fundamental = 1,
+        Medio = 2
     }
 }

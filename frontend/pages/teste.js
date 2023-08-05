@@ -1,3 +1,4 @@
+import React from 'react';
 import PublicPage from "@/pages/publicPage";
 import styled from "@emotion/styled";
 import {
@@ -7,12 +8,17 @@ import {
   CardContent,
   Divider,
   Typography,
-  useMediaQuery,
+  useMediaQuery
 } from "@mui/material";
 import TextField, { textFieldClasses } from "@mui/material/TextField";
+import Select from '@mui/material/Select';
+import NativeSelect from '@mui/material/NativeSelect'
+import FormControl from '@mui/material/FormControl';
 import { Formik } from "formik";
 import { useRouter } from "next/router";
 import { useState } from "react";
+import InputBase from '@mui/material/InputBase';
+ 
 
 const MyTitle = styled.h4`
   margin: 0;
@@ -41,6 +47,25 @@ const RoundedTextField = styled(TextField)({
   "& .MuiInputBase-input:-webkit-autofill": {
     "-webkit-text-fill-color": "black",
     "-webkit-box-shadow": "0 0 0 1000px white inset",
+  },
+});
+
+const MyFormControl = styled(InputBase)({
+  '& .MuiInputBase-input': {
+    borderRadius: 30,
+    backgroundColor: "white",
+    color: "black",
+    padding: '10px 26px 10px 12px',
+
+    '&:focus': {
+      borderRadius: 30,
+      backgroundColor: "white",
+  }
+}});
+
+const SelectInput = styled(Select)({
+  '& .MuiInputBase-input': {
+    color: 'black',
   },
 });
 
@@ -87,6 +112,14 @@ function Index(props) {
   const router = useRouter();
   const matches = useMediaQuery("(max-width:1000px)");
   const [active, setActive] = useState(false);
+  const [nivel, setNivel] = React.useState('');
+  const [tipo, setTipo] = React.useState('');
+  const handleNivelChange = (event) => {
+    setNivel(event.target.value);
+  };
+  const handleTipoChange = (event) => {
+    setTipo(event.target.value);
+  };
 
   if (active) {
     return (
@@ -106,7 +139,7 @@ function Index(props) {
                   {Object.keys(question.opcoes).map((key) => (
                     <>
                       <Typography variant="body1">
-                        {key}) {question.opcoes[key]}
+                        {key} {question.opcoes[key]}
                       </Typography>
                     </>
                   ))}
@@ -162,7 +195,6 @@ function Index(props) {
             values,
             errors,
             touched,
-            handleChange,
             handleBlur,
             handleSubmit,
             isSubmitting,
@@ -178,9 +210,64 @@ function Index(props) {
                   />
                 </Box>
                 <Box>
-                  <MyTitle variant="h4">Nível:</MyTitle>
+                  <MyTitle variant="h4">Assunto:</MyTitle>
                   <RoundedTextField
-                    placeholder="Ex: Ensino médio, Fundamental II..."
+                    placeholder="Ex: Frações, Probabilidade, Guerra fria..."
+                    style={{ width: "100%" }}
+                  />
+                </Box>
+                <Box>
+                  <MyTitle variant="h4">Ano:</MyTitle>
+                  <RoundedTextField
+                     type="number"
+                    style={{ width: "100%" }}
+                  />
+                </Box>
+                <Box>
+                  <MyTitle variant="h4">Nível:</MyTitle>
+                  <FormControl variant="standard" fullWidth required sx={{ m: 1}}>
+                    <NativeSelect
+                      value={nivel}
+                      onChange={handleNivelChange}
+                      input={<MyFormControl/>}
+                    >
+                      <option disabled value="">
+                        <em>Nível</em>
+                      </option>
+                      <option value={0}>Ensino Básico</option>
+                      <option value={1}>Ensino Fundamental</option>
+                      <option value={2}>Ensino Médio</option>
+                    </NativeSelect>
+                  </FormControl>
+                </Box>
+                <Box>
+                  <MyTitle variant="h4">Tipo de Questões:</MyTitle>
+                  <FormControl variant="standard" fullWidth required sx={{ m: 1}}>
+                    <NativeSelect
+                      value={tipo}
+                      onChange={handleTipoChange}
+                      input={<MyFormControl/>}
+                    >
+                      <option disabled value="">
+                        <em>Questões</em>
+                      </option>
+                      <option value={0}>Abertas</option>
+                      <option value={1}>Fechadas</option>
+                      <option value={2}>Ambas</option>
+                    </NativeSelect>
+                  </FormControl>
+                </Box>
+                <Box>
+                  <MyTitle variant="h4">Quantidade de questões:</MyTitle>
+                  <RoundedTextField
+                    type="number"
+                    style={{ width: "100%" }}
+                  />
+                </Box>
+                <Box>
+                  <MyTitle variant="h4">Observação:</MyTitle>
+                  <RoundedTextField
+                    placeholder="Ex: , Probabilidade, Guerra fria..."
                     style={{ width: "100%" }}
                   />
                 </Box>
