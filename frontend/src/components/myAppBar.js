@@ -34,7 +34,7 @@ function MyAppBar(props) {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-      <Typography variant="h6" sx={{ my: 2 }}>
+      <Typography variant="h6" sx={{ my: 2, color: 'black' }}>
         QuesDB
       </Typography>
       <Divider />
@@ -42,7 +42,7 @@ function MyAppBar(props) {
         {navItems2.map((item) => (
           <ListItem key={item.name} disablePadding>
             <ListItemButton sx={{ textAlign: 'center' }} onClick={() => router.push(item.route)}>
-              <ListItemText primary={item.name} />
+              <ListItemText primary={item.name} style={{ color: 'black' }} />
             </ListItemButton>
           </ListItem>
         ))}
