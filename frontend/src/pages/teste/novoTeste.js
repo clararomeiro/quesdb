@@ -94,15 +94,15 @@ const anoList = [
 ];
 
 const nivelList = [
-  { value: "Basico", name: "Ensino Fundamental I" },
-  { value: "Fundamental", name: "Ensino Fundamental II" },
-  { value: "Medio", name: "Ensino médio" },
+  { value: 0, name: "Ensino Fundamental I" },
+  { value: 1, name: "Ensino Fundamental II" },
+  { value: 2, name: "Ensino médio" },
 ];
 
 const tipoQuestaoList = [
-  { value: "Aberta", name: "Abertas" },
-  { value: "Fechada", name: "Fechadas" },
-  { value: "Ambas", name: "Ambas" },
+  { value: 0, name: "Abertas" },
+  { value: 1, name: "Fechadas" },
+  { value: 2, name: "Ambas" },
 ];
 
 const validationSchema = Yup.object().shape({
