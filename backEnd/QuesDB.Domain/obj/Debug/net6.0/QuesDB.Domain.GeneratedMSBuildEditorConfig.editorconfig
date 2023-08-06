@@ -8,4 +8,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = QuesDB.Domain
-build_property.ProjectDir = C:\Users\aldenirtelles_frwk\Desktop\BackRepo\QuesDB\QuesDB.Domain\
+build_property.ProjectDir = C:\Users\aldenirtelles_frwk\Documents\GitHub\quesdb\backEnd\QuesDB.Domain\
