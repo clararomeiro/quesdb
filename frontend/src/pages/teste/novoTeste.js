@@ -102,7 +102,7 @@ const nivelList = [
 const tipoQuestaoList = [
   { value: 0, name: "Abertas" },
   { value: 1, name: "Fechadas" },
-  { value: 2, name: "Ambas" },
+  // { value: 2, name: "Ambas" },
 ];
 
 const validationSchema = Yup.object().shape({
@@ -117,7 +117,7 @@ const validationSchema = Yup.object().shape({
 function NovoTeste(props) {
   const router = useRouter();
   const matches = useMediaQuery("(max-width:1000px)");
-  const { handleSubmit } = props;
+  const { handleSubmit, loading } = props;
 
   return (
     <Formik
@@ -150,7 +150,7 @@ function NovoTeste(props) {
         dirty,
       }) => {
         return (
-          <form>
+          <form onSubmit={handleSubmit}>
             <Box>
               <MyTitle variant="h4">Matéria:</MyTitle>
               <Field
@@ -185,11 +185,11 @@ function NovoTeste(props) {
                     const handleNivelChange = (e) => {
                       const selectedNivel = e.target.value;
                       const filteredAnoList = anoList.filter((ano) => {
-                        if (selectedNivel === "Basico") {
+                        if (selectedNivel === 0) {
                           return ano.value >= 1 && ano.value <= 5;
-                        } else if (selectedNivel === "Fundamental") {
+                        } else if (selectedNivel === 1) {
                           return ano.value >= 6 && ano.value <= 9;
-                        } else if (selectedNivel === "Medio") {
+                        } else if (selectedNivel === 2) {
                           return ano.value >= 1 && ano.value <= 3;
                         } else {
                           return false; // Unknown nivel value, don't show any options
@@ -274,7 +274,6 @@ function NovoTeste(props) {
                     );
                   }}
                 </Field>
-                <ErrorMessage name="questoes" />
               </FormControl>
             </Box>
             <Box>
@@ -297,7 +296,6 @@ function NovoTeste(props) {
                 as={RoundedTextField}
                 style={{ marginTop: 0 }}
                 fullWidth
-                required
                 margin="normal"
               />
             </Box>
@@ -306,9 +304,9 @@ function NovoTeste(props) {
               <MyButton
                 disabled={isSubmitting || !isValid || !dirty}
                 variant="contained"
-                onClick={() => handleSubmit()}
+                type="submit"
               >
-                {isSubmitting? "Processando..." : "Enviar"}
+                {loading? "Processando..." : "Enviar"}
               </MyButton>
             </Box>
           </form>

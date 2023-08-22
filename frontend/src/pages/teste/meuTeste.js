@@ -1,86 +1,82 @@
 import PublicPage from "@/pages/publicPage";
 import {
+  Accordion,
+  AccordionDetails,
+  AccordionSummary,
   Box,
+  Button,
   Card,
   CardContent,
   Divider,
   Typography,
-  useMediaQuery
+  useMediaQuery,
 } from "@mui/material";
 import { useRouter } from "next/router";
+import { openedQuestions } from "./questions";
+import { useState } from "react";
+import styled from "@emotion/styled";
 
-// const questions = [
-//   {
-//     enunciado:
-//       "Em uma loja de doces, um grupo de amigos comprou diversos chocolates. As quantidades compradas foram: 5, 6, 7, 8 e 10 unidades, respectivamente. Calcule a média aritmética de chocolates comprados por esse grupo.",
-//     opcoes: {
-//       a: "5",
-//       b: "6",
-//       c: "7",
-//       d: "8",
-//       e: "9",
-//     },
-//     resposta_correta: "d",
-//   },
-//   {
-//     enunciado:
-//       "Em uma competição de atletismo, as idades dos atletas foram registradas para análise estatística. As idades são: 13, 14, 15, 15, 16, 16, 17, 18 e 19 anos. Qual é a idade que mais se repete (moda) entre os atletas?",
-//     opcoes: {
-//       a: "13",
-//       b: "15",
-//       c: "16",
-//       d: "17",
-//       e: "18",
-//     },
-//     resposta_correta: "c",
-//   },
-//   {
-//     enunciado:
-//       "Um estudante resolveu fazer cinco provas e anotou suas notas em ordem crescente: 6, 7, 8, 8 e 9. Calcule a mediana das notas desse estudante.",
-//     opcoes: {
-//       a: "7",
-//       b: "7.5",
-//       c: "8",
-//       d: "8.5",
-//       e: "9",
-//     },
-//     resposta_correta: "d",
-//   },
-// ];
+const MyButton = styled(Button)(({ theme, disabled }) => ({
+  borderRadius: 50,
+  color: "#BE9505",
+  backgroundColor: disabled ? "grey" : "white",
+  width: "50%",
+  height: 50,
+  "&:hover": {
+    backgroundColor: disabled ? "grey" : "white",
+  },
+}));
 
 function MeuTeste(props) {
   const router = useRouter();
   const matches = useMediaQuery("(max-width:1000px)");
-  const { questions } = props;
+  const [expanded, setExpanded] = useState("");
+  const { questions, reset } = props;
+
+  const handleChange = (panel) => (event, newExpanded) => {
+    setExpanded(newExpanded ? panel : false);
+  };
 
   return (
     <PublicPage>
-      <Box
-        style={{
-          width: matches ? "90vw" : "60vw",
-          margin: "5vh auto",
-        }}
-      >
+      <Box style={{marginTop: -50}}>
         <Card>
           <CardContent style={{ color: "black" }}>
-            {questions.map((question) => (
+            {questions.map((question, index) => (
               <>
                 <Typography variant="h5">{question.enunciado}</Typography>
-                <br />
-                {Object.keys(question.opcoes).map((key) => (
-                  <>
-                    <Typography variant="body1">
-                      {key}) {question.opcoes[key]}
+                {question.opcoes &&
+                  Object.keys(question.opcoes).map((key) => (
+                    <>
+                      <br />
+                      <Typography variant="body1">
+                        {key}) {question.opcoes[key]}
+                      </Typography>
+                    </>
+                  ))}
+                <br/>
+                <Accordion
+                  expanded={expanded === `panel${index}`}
+                  onChange={handleChange(`panel${index}`)}
+                >
+                  <AccordionSummary
+                    aria-controls={`panel${index}d-content`}
+                    id={`panel${index}d-header`}
+                  >
+                    <Typography style={{color: 'black'}}>Clique para ver a resposta</Typography>
+                  </AccordionSummary>
+                  <AccordionDetails>
+                    <Typography variant="body2" style={{color: 'grey'}}>
+                      {question.resposta_correta}
                     </Typography>
-                  </>
-                ))}
-                <Divider style={{ margin: "20px 0" }} />
-                <Typography variant="body2">
-                  Resposta correta: {question.resposta_correta}
-                </Typography>
-                <Divider style={{ margin: "20px 0" }} />
+                  </AccordionDetails>
+                </Accordion>
+                <br/>
               </>
             ))}
+            <Box style={{textAlign: 'center'}}>
+              <MyButton variant="outlined" onClick={() => reset()}>Novo teste</MyButton>
+            </Box>
           </CardContent>
         </Card>
       </Box>
