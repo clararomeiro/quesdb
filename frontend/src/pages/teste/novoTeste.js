@@ -106,12 +106,12 @@ const tipoQuestaoList = [
 ];
 
 const validationSchema = Yup.object().shape({
-  materia: Yup.string().required("Campo obrigatório"),
-  assunto: Yup.string().required("Campo obrigatório"),
-  ano: Yup.number().required("Campo obrigatório"),
-  nivel: Yup.string().required("Campo obrigatório"),
-  questoes: Yup.string().required("Campo obrigatório"),
-  quantidadeQuestoes: Yup.number().required("Campo obrigatório"),
+  Materia: Yup.string().required("Campo obrigatório"),
+  Assunto: Yup.string().required("Campo obrigatório"),
+  Ano: Yup.number().required("Campo obrigatório"),
+  Nivel: Yup.string().required("Campo obrigatório"),
+  Questoes: Yup.string().required("Campo obrigatório"),
+  QtdQuestoes: Yup.number().required("Campo obrigatório"),
 });
 
 function NovoTeste(props) {
@@ -122,20 +122,21 @@ function NovoTeste(props) {
   return (
     <Formik
       initialValues={{
-        materia: "",
-        assunto: "",
-        ano: "",
-        nivel: "",
-        questoes: "",
-        quantidadeQuestoes: "",
+        Materia: "",
+        Assunto: "",
+        Ano: "",
+        Nivel: "",
+        Questoes: "",
+        QtdQuestoes: "",
         observacao: "",
         filteredAnoList: anoList,
       }}
       validationSchema={validationSchema}
       onSubmit={(values, { resetForm, setValues }) => {
-        handleSubmit(values);
-        resetForm()
-        setValues(values)
+        const { filteredAnoList: _, ...val } = values;
+        handleSubmit(val);
+        resetForm();
+        setValues(values);
       }}
     >
       {({
@@ -154,7 +155,7 @@ function NovoTeste(props) {
             <Box>
               <MyTitle variant="h4">Matéria:</MyTitle>
               <Field
-                name="materia"
+                name="Materia"
                 as={RoundedTextField}
                 placeholder="Ex: Matemática"
                 style={{ marginTop: 0 }}
@@ -166,7 +167,7 @@ function NovoTeste(props) {
             <Box>
               <MyTitle variant="h4">Assunto:</MyTitle>
               <Field
-                name="assunto"
+                name="Assunto"
                 as={RoundedTextField}
                 placeholder="Ex: Frações"
                 style={{ marginTop: 0 }}
@@ -180,7 +181,7 @@ function NovoTeste(props) {
               <FormControl fullWidth margin="normal" style={{ marginTop: 0 }}>
                 <InputLabel>Ex: Ensino fundamental I</InputLabel>
 
-                <Field name="nivel">
+                <Field name="Nivel">
                   {({ field, form }) => {
                     const handleNivelChange = (e) => {
                       const selectedNivel = e.target.value;
@@ -196,8 +197,8 @@ function NovoTeste(props) {
                         }
                       });
 
-                      form.setFieldValue("ano", ""); // Reset selected value to avoid inconsistencies
-                      form.setFieldValue("nivel", selectedNivel); // Set selected nivel value
+                      form.setFieldValue("Ano", ""); // Reset selected value to avoid inconsistencies
+                      form.setFieldValue("Nivel", selectedNivel); // Set selected nivel value
 
                       // Set the filtered anoList as options for the select field
                       form.setFieldValue("filteredAnoList", filteredAnoList);
@@ -218,7 +219,7 @@ function NovoTeste(props) {
                     );
                   }}
                 </Field>
-                <ErrorMessage name="nivel" />
+                <ErrorMessage name="Nivel" />
               </FormControl>
             </Box>
             <Box>
@@ -226,7 +227,7 @@ function NovoTeste(props) {
               <FormControl fullWidth margin="normal" style={{ marginTop: 0 }}>
                 <InputLabel>Ex: 5º ano</InputLabel>
 
-                <Field name="ano">
+                <Field name="Ano">
                   {({ field, form }) => {
                     return (
                       <>
@@ -254,7 +255,7 @@ function NovoTeste(props) {
               <FormControl fullWidth margin="normal" style={{ marginTop: 0 }}>
                 <InputLabel>Ex: Abertas</InputLabel>
 
-                <Field name="questoes">
+                <Field name="Questoes">
                   {({ field, form }) => {
                     return (
                       <>
@@ -269,7 +270,7 @@ function NovoTeste(props) {
                             </MenuItem>
                           ))}
                         </RoundedSelect>
-                        <ErrorMessage name="questoes" />
+                        <ErrorMessage name="Questoes" />
                       </>
                     );
                   }}
@@ -279,7 +280,7 @@ function NovoTeste(props) {
             <Box>
               <MyTitle variant="h4">Quantidade questoes:</MyTitle>
               <Field
-                name="quantidadeQuestoes"
+                name="QtdQuestoes"
                 as={RoundedTextField}
                 placeholder="Ex: 10"
                 style={{ marginTop: 0 }}
@@ -306,7 +307,7 @@ function NovoTeste(props) {
                 variant="contained"
                 type="submit"
               >
-                {loading? "Processando..." : "Enviar"}
+                {loading ? "Processando..." : "Enviar"}
               </MyButton>
             </Box>
           </form>

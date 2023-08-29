@@ -17,31 +17,30 @@ function Test(props) {
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = (values) => {
-    setLoading(true)
+    setLoading(true);
     var myHeaders = new Headers();
     myHeaders.append("accept", "*/*");
     myHeaders.append("Content-Type", "application/json");
 
-    var raw = JSON.stringify(values);
-
     var requestOptions = {
       method: "POST",
       headers: myHeaders,
-      body: raw,
       redirect: "follow",
     };
 
-    fetch("http://localhost:8080/generate-test", requestOptions)
+    fetch(
+      "http://localhost:8080/generate-test?" + new URLSearchParams(values),
+      requestOptions
+    )
       .then((response) => response.text())
       .then((result) => {
-        setTest(JSON.parse(result))
-        setLoading(false)
+        setTest(JSON.parse(result));
+        setLoading(false);
       })
       .catch((error) => {
-        console.log("error", error)
-        setLoading(false)
+        console.log("error", error);
+        setLoading(false);
       });
-    
   };
 
   return (
@@ -56,9 +55,9 @@ function Test(props) {
         }}
       >
         {Object.keys(test).length > 0 ? (
-          <MeuTeste questions={test.questoes} reset={() => setTest({})}/>
+          <MeuTeste questions={test.questoes} reset={() => setTest({})} />
         ) : (
-          <NovoTeste handleSubmit={handleSubmit} loading={loading}/>
+          <NovoTeste handleSubmit={handleSubmit} loading={loading} />
         )}
       </Box>
     </PublicPage>
