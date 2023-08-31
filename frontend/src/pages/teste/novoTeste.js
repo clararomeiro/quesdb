@@ -133,11 +133,15 @@ function NovoTeste(props) {
       }}
       validationSchema={validationSchema}
       onSubmit={(values, { resetForm, setValues }) => {
+        const Niveis = ["Fundamental I", "Fundamental II", "Medio"];
         const { filteredAnoList: _, ...val } = values;
-        const form = Object.entries(val).reduce(
-          (acc, [k, v]) => (v ? { ...acc, [k]: v } : acc),
-          {}
-        );
+
+        let form = val;
+        form["Nivel"] = Niveis[form["Nivel"]];
+        if (form.Observacao === "") {
+          delete form["Observacao"];
+        }
+
         handleSubmit(form);
         resetForm();
         setValues(values);
@@ -255,7 +259,7 @@ function NovoTeste(props) {
               </FormControl>
             </Box>
             <Box>
-              <MyTitle variant="h4">Questões:</MyTitle>
+              <MyTitle variant="h4">Tipo de questões:</MyTitle>
               <FormControl fullWidth margin="normal" style={{ marginTop: 0 }}>
                 <InputLabel>Ex: Abertas</InputLabel>
 
@@ -282,7 +286,7 @@ function NovoTeste(props) {
               </FormControl>
             </Box>
             <Box>
-              <MyTitle variant="h4">Quantidade questoes:</MyTitle>
+              <MyTitle variant="h4">Quantidade de questões:</MyTitle>
               <Field
                 name="QtdQuestoes"
                 as={RoundedTextField}

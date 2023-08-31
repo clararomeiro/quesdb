@@ -125,3 +125,6 @@ backEnd/QuesDB/obj/QuesDB.csproj.nuget.dgspec.json
 backEnd/QuesDB/obj/project.assets.json
 backEnd/QuesDB.Test/obj/QuesDB.Test.csproj.nuget.dgspec.json
 backEnd/QuesDB.Test/obj/project.assets.json
+
+test-back/
+tests/node_modules/

@@ -29,13 +29,12 @@ function Test(props) {
     };
 
     fetch(
-      "https://localhost:7259/criarFormulario?" + new URLSearchParams(values),
+      "http://localhost:8080/criarFormulario?" + new URLSearchParams(values),
       requestOptions
     )
-      .then((response) => response.text())
+      .then((response) => response.json())
       .then((result) => {
-        console.log(JSON.parse(result));
-        setTest(JSON.parse(result));
+        setTest(result);
         setLoading(false);
       })
       .catch((error) => {

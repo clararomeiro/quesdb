@@ -1,8 +1,14 @@
 import PublicPage from "@/pages/publicPage";
 import styled from "@emotion/styled";
-import { Box, Button, Card, CardContent, Typography, useMediaQuery } from "@mui/material";
+import {
+  Box,
+  Button,
+  Card,
+  CardContent,
+  Typography,
+  useMediaQuery,
+} from "@mui/material";
 import { useRouter } from "next/router";
-
 
 const MyText = styled.h1`
   text-align: center;
@@ -14,7 +20,7 @@ const MyText = styled.h1`
 
 function Index(props) {
   const router = useRouter();
-  const matches = useMediaQuery('(max-width:900px)')
+  const matches = useMediaQuery("(max-width:900px)");
 
   return (
     <PublicPage>
@@ -27,9 +33,14 @@ function Index(props) {
           justifyContent: "center",
         }}
       >
-        <Card style={{ width: matches? '90vw' : '60vw', borderRadius: 20 }}>
-          <CardContent style={{color: 'black', padding:  matches? 20 : 40}}>
-            <MyText >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</MyText>
+        <Card style={{ width: matches ? "90vw" : "60vw", borderRadius: 20 }}>
+          <CardContent style={{ color: "black", padding: matches ? 20 : 40 }}>
+            <MyText>
+              O QuesDB é um projeto feito por alunos de Computação para faciliar
+              a criação de provas para professores e para alunos que precisam de
+              desejam testar seu conhecimento. Projetado na cadeira de
+              desenvolvimento web, o projeto ainda está em desenvolvimento.
+            </MyText>
           </CardContent>
         </Card>
       </Box>
