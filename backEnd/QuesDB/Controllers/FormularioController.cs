@@ -45,6 +45,7 @@ namespace QuesDB.Controllers
             completion.Messages = new ChatMessage[] { new ChatMessage(role, Utils.parseFormulario(formulario)) };
             completion.Model = OpenAI_API.Models.Model.ChatGPTTurbo;
             completion.MaxTokens = 1000;
+            completion.Temperature = 0;
 
             var result = await openai.Chat.CreateChatCompletionAsync(completion);
 
