@@ -128,13 +128,17 @@ function NovoTeste(props) {
         Nivel: "",
         Questoes: "",
         QtdQuestoes: "",
-        observacao: "",
+        Observacao: "",
         filteredAnoList: anoList,
       }}
       validationSchema={validationSchema}
       onSubmit={(values, { resetForm, setValues }) => {
         const { filteredAnoList: _, ...val } = values;
-        handleSubmit(val);
+        const form = Object.entries(val).reduce(
+          (acc, [k, v]) => (v ? { ...acc, [k]: v } : acc),
+          {}
+        );
+        handleSubmit(form);
         resetForm();
         setValues(values);
       }}
@@ -293,7 +297,7 @@ function NovoTeste(props) {
             <Box>
               <MyTitle variant="h4">Observação:</MyTitle>
               <Field
-                name="observacao"
+                name="Observacao"
                 as={RoundedTextField}
                 style={{ marginTop: 0 }}
                 fullWidth
