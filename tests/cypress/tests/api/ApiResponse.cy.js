@@ -17,6 +17,7 @@ describe("Main Page", () => {
         QtdQuestoes: "2",
       },
     }).then((response) => {
+      expect(response.status).to.be.equal(200);
       expect(response.body.questoes).to.have.length(2);
       expect(response.body.questoes[0].opcoes).to.be.undefined;
     });
@@ -38,6 +39,7 @@ describe("Main Page", () => {
         QtdQuestoes: "2",
       },
     }).then((response) => {
+      expect(response.status).to.be.equal(200);
       expect(response.body.questoes).to.have.length(2);
       expect(response.body.questoes[0].opcoes).to.have.keys(["a", "b", "c", "d", "e"]);
     });
@@ -62,6 +64,7 @@ describe("Main Page", () => {
           QtdQuestoes: num,
         },
       }).then((response) => {
+        expect(response.status).to.be.equal(200);
         expect(response.body.questoes).to.have.length(num);
       });
     });
