@@ -57,9 +57,11 @@ namespace QuesDB.Controllers
             foreach (var item in result.Choices)
             {
                 answer = item.Message.Content;
+                string updatedAnswer = answer.Replace("resposta_Correta", "resposta_correta");
 
                 QuestoesDtoResponse questoesDTO = JsonConvert.DeserializeObject<QuestoesDtoResponse>(answer);
 
+                
                 Console.WriteLine(questoesDTO);
                 return Ok(questoesDTO);
             }
