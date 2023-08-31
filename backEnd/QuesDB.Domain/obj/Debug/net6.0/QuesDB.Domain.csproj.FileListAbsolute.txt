@@ -10,3 +10,15 @@ C:\Users\aldenirtelles_frwk\Desktop\BackRepo\QuesDB\QuesDB.Domain\obj\Debug\net6
 C:\Users\aldenirtelles_frwk\Desktop\BackRepo\QuesDB\QuesDB.Domain\obj\Debug\net6.0\refint\QuesDB.Domain.dll
 C:\Users\aldenirtelles_frwk\Desktop\BackRepo\QuesDB\QuesDB.Domain\obj\Debug\net6.0\QuesDB.Domain.pdb
 C:\Users\aldenirtelles_frwk\Desktop\BackRepo\QuesDB\QuesDB.Domain\obj\Debug\net6.0\ref\QuesDB.Domain.dll
+C:\Users\aldenirtelles_frwk\Documents\GitHub\quesdb\backEnd\QuesDB.Domain\bin\Debug\net6.0\QuesDB.Domain.deps.json
+C:\Users\aldenirtelles_frwk\Documents\GitHub\quesdb\backEnd\QuesDB.Domain\bin\Debug\net6.0\QuesDB.Domain.dll
+C:\Users\aldenirtelles_frwk\Documents\GitHub\quesdb\backEnd\QuesDB.Domain\bin\Debug\net6.0\QuesDB.Domain.pdb
+C:\Users\aldenirtelles_frwk\Documents\GitHub\quesdb\backEnd\QuesDB.Domain\obj\Debug\net6.0\QuesDB.Domain.csproj.AssemblyReference.cache
+C:\Users\aldenirtelles_frwk\Documents\GitHub\quesdb\backEnd\QuesDB.Domain\obj\Debug\net6.0\QuesDB.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\aldenirtelles_frwk\Documents\GitHub\quesdb\backEnd\QuesDB.Domain\obj\Debug\net6.0\QuesDB.Domain.AssemblyInfoInputs.cache
+C:\Users\aldenirtelles_frwk\Documents\GitHub\quesdb\backEnd\QuesDB.Domain\obj\Debug\net6.0\QuesDB.Domain.AssemblyInfo.cs
+C:\Users\aldenirtelles_frwk\Documents\GitHub\quesdb\backEnd\QuesDB.Domain\obj\Debug\net6.0\QuesDB.Domain.csproj.CoreCompileInputs.cache
+C:\Users\aldenirtelles_frwk\Documents\GitHub\quesdb\backEnd\QuesDB.Domain\obj\Debug\net6.0\QuesDB.Domain.dll
+C:\Users\aldenirtelles_frwk\Documents\GitHub\quesdb\backEnd\QuesDB.Domain\obj\Debug\net6.0\refint\QuesDB.Domain.dll
+C:\Users\aldenirtelles_frwk\Documents\GitHub\quesdb\backEnd\QuesDB.Domain\obj\Debug\net6.0\QuesDB.Domain.pdb
+C:\Users\aldenirtelles_frwk\Documents\GitHub\quesdb\backEnd\QuesDB.Domain\obj\Debug\net6.0\ref\QuesDB.Domain.dll

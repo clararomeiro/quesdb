@@ -5,6 +5,10 @@ using QuesDB.Domain.Entities;
 using QuesDB.Domain.Interfaces;
 using OpenAI_API.Chat;
 using OpenAI_API;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System.Text.Json.Nodes;
+using QuesDB.Domain.Contracts.Responses;
 
 namespace QuesDB.Controllers
 {
@@ -47,14 +51,19 @@ namespace QuesDB.Controllers
             completion.MaxTokens = 1000;
 
             var result = await openai.Chat.CreateChatCompletionAsync(completion);
+            
 
             foreach (var item in result.Choices)
             {
                 answer = item.Message.Content;
+
+                QuestoesDtoResponse questoesDTO = JsonConvert.DeserializeObject<QuestoesDtoResponse>(answer);
+
+                Console.WriteLine(questoesDTO);
+                return Ok(questoesDTO);
             }
 
-
-            return Ok(answer);
+            return BadRequest();
         }
 
     }
