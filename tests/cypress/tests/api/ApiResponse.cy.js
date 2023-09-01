@@ -3,7 +3,7 @@
 describe("Main Page", () => {
   it("Open-ended should be correct", () => {
     cy.api({
-      url: "http://localhost:8080/criarFormulario",
+      url: "https://localhost:7259/criarFormulario",
       method: "POST",
       headers: {
         accept: "*/*",
@@ -19,13 +19,13 @@ describe("Main Page", () => {
     }).then((response) => {
       expect(response.status).to.be.equal(200);
       expect(response.body.questoes).to.have.length(2);
-      expect(response.body.questoes[0].opcoes).to.be.undefined;
+      expect(response.body.questoes[0].opcoes).to.be.null;
     });
   });
 
   it("Close-ended should be correct", () => {
     cy.api({
-      url: "http://localhost:8080/criarFormulario",
+      url: "https://localhost:7259/criarFormulario",
       method: "POST",
       headers: {
         accept: "*/*",
@@ -50,7 +50,7 @@ describe("Main Page", () => {
   numQuestions.forEach((num) => {
     it.skip(`Response should have length ${num}`, () => {
       cy.api({
-        url: "http://localhost:8080/criarFormulario",
+        url: "https://localhost:7259/criarFormulario",
         method: "POST",
         headers: {
           accept: "*/*",
