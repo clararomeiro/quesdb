@@ -9,7 +9,7 @@ namespace QuesDB
         {
             string text = "Crie uma prova de " + formulario.Materia + " para alunos do " + formulario.Ano +
                 " do ensino " + formulario.Nivel + " com " + formulario.QtdQuestoes + " questões " + formulario.Questoes + " sobre " + formulario.Assunto
-                + " Retorne somente a prova com estrutura de JSON com os seguintes atributos: -questoes: a lista de questões; -cada questão terá:  -enunciado com uma história que se relacione à pergunta da questão;  - a resposta correta utilizando resposta_correta como chave; ";
+                + " Retorne somente a prova com estrutura de JSON com os seguintes atributos: -questoes: a lista de questões; -cada questão terá:  -enunciado com uma história que se relacione à pergunta da questão; - utilizando resposta_correta como variável ; ";
 
             if(formulario.Questoes != Domain.Enum.TipoQuestoes.Aberta)
             {
